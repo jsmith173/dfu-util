@@ -50,6 +50,7 @@ static int find_descriptor(const uint8_t *desc_list, int list_len,
 {
 	int p = 0;
 
+	printf("find_descriptor... list_len: %d\n", list_len);
 	if (list_len < 2)
 		return (-1);
 
