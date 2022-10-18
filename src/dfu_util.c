@@ -171,6 +171,7 @@ static void probe_configuration(libusb_device *dev, struct libusb_device_descrip
 	int ret;
 	int has_dfu;
 
+	printf("probe_configuration... desc->bNumConfigurations: %d\n", desc->bNumConfigurations);
 	for (cfg_idx = 0; cfg_idx != desc->bNumConfigurations; cfg_idx++) {
 		memset(&func_dfu, 0, sizeof(func_dfu));
 		has_dfu = 0;
