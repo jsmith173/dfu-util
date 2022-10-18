@@ -177,6 +177,7 @@ static void probe_configuration(libusb_device *dev, struct libusb_device_descrip
 		has_dfu = 0;
 
 		ret = libusb_get_config_descriptor(dev, cfg_idx, &cfg);
+  	    printf("libusb_get_config_descriptor... ret: %d\n", ret);
 		if (ret != 0)
 			return;
 		if (match_config_index > -1 && match_config_index != cfg->bConfigurationValue) {
@@ -450,7 +451,9 @@ void probe_devices(libusb_context *ctx)
 		if (libusb_get_device_descriptor(dev, &desc))
 			continue;
 		probe_configuration(dev, &desc);
+ 	    printf("\n");
 	}
+	printf("\n");
 	libusb_free_device_list(list, 1);
 }
 
