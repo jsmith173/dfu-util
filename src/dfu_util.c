@@ -62,6 +62,7 @@ static int find_descriptor(const uint8_t *desc_list, int list_len,
 			warnx("Invalid descriptor list");
 			return -1;
 		}
+ 	    printf("find_descriptor... desc_list[p + 1]: %x\n", desc_list[p + 1]);
 		if (desc_list[p + 1] == desc_type) {
 			if (desclen > res_size)
 				desclen = res_size;
