@@ -194,6 +194,7 @@ static void probe_configuration(libusb_device *dev, struct libusb_device_descrip
 
 		ret = find_descriptor(cfg->extra, cfg->extra_length,
 		    USB_DT_DFU, &func_dfu, sizeof(func_dfu));
+  	    printf("find_descriptor... ret: %d\n", ret);
 		if (ret > -1)
 			goto found_dfu;
 
