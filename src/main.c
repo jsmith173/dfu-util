@@ -409,6 +409,8 @@ int main(int argc, char **argv)
 	if (ret)
 		errx(EX_IOERR, "unable to initialize libusb: %s", libusb_error_name(ret));
 
+	printf("libusb_init OK\n");
+	
 	if (verbose > 2) {
 #if defined(LIBUSB_API_VERSION) && LIBUSB_API_VERSION >= 0x01000106
 		libusb_set_option(ctx, LIBUSB_OPTION_LOG_LEVEL, LIBUSB_LOG_LEVEL_DEBUG);
