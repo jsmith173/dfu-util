@@ -177,6 +177,8 @@ static void probe_configuration(libusb_device *dev, struct libusb_device_descrip
 		memset(&func_dfu, 0, sizeof(func_dfu));
 		has_dfu = 0;
 
+        printf("Vendor:Device = %04x:%04x\n", desc->idVendor, desc->idProduct);
+		
 		ret = libusb_get_config_descriptor(dev, cfg_idx, &cfg);
   	    printf("libusb_get_config_descriptor... ret: %d\n", ret);
 		if (ret != 0)
