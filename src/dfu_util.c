@@ -439,6 +439,7 @@ void probe_devices(libusb_context *ctx)
 	ssize_t i;
 
 	num_devs = libusb_get_device_list(ctx, &list);
+	printf("probe_devices... N: %d\n", num_devs);
 	for (i = 0; i < num_devs; ++i) {
 		struct libusb_device_descriptor desc;
 		struct libusb_device *dev = list[i];
